@@ -1,0 +1,12 @@
+{
+  "types": {
+    "pages": "/:filename",
+    "index": "/:paginate(totalPages)",
+    "buildlog": "/buildlog",
+    "attributions": "/attributions"
+  },
+	"build": "public",
+	"local": {
+		"port": 3000
+	}
+}

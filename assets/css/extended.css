@@ -1,0 +1,35 @@
+/*claxxmoldii/2021.3.5*/
+body {
+  background-color: #f5f5f5;
+}
+
+.isgrid {
+  display: grid;
+}
+
+.isFlex {
+  display: flex;
+}
+
+.isFlexColumn {
+ display: flex;
+ flex-direction: column;
+}
+
+.isFlexCentered {
+  display: flex;
+  justify-content: center;
+}
+
+.isMarginAutoCentered {
+  margin: 0 auto;
+}
+
+.isListStyledNon {
+  list-style-type: none;
+}
+
+.isLinkTextDecorationNone {
+  text-decoration: none;
+  color: inherit;
+}
