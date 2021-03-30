@@ -54,10 +54,10 @@ function create_fragment(ctx) {
 		/*content*/ ctx[1].fields,
 		{ content: /*content*/ ctx[1] },
 		{ allContent: /*allContent*/ ctx[2] },
-		{ allComponents: /*allComponents*/ ctx[3] }
+		{ allLayouts: /*allLayouts*/ ctx[3] }
 	];
 
-	var switch_value = /*route*/ ctx[0];
+	var switch_value = /*layout*/ ctx[0];
 
 	function switch_props(ctx) {
 		let switch_instance_props = {};
@@ -147,16 +147,16 @@ function create_fragment(ctx) {
 			if (dirty & /*content*/ 2) head_changes.title = /*content*/ ctx[1].filename;
 			head.$set(head_changes);
 
-			const switch_instance_changes = (dirty & /*content, allContent, allComponents*/ 14)
+			const switch_instance_changes = (dirty & /*content, allContent, allLayouts*/ 14)
 			? get_spread_update(switch_instance_spread_levels, [
 					dirty & /*content*/ 2 && get_spread_object(/*content*/ ctx[1].fields),
 					dirty & /*content*/ 2 && { content: /*content*/ ctx[1] },
 					dirty & /*allContent*/ 4 && { allContent: /*allContent*/ ctx[2] },
-					dirty & /*allComponents*/ 8 && { allComponents: /*allComponents*/ ctx[3] }
+					dirty & /*allLayouts*/ 8 && { allLayouts: /*allLayouts*/ ctx[3] }
 				])
 			: {};
 
-			if (switch_value !== (switch_value = /*route*/ ctx[0])) {
+			if (switch_value !== (switch_value = /*layout*/ ctx[0])) {
 				if (switch_instance) {
 					group_outros();
 					const old_component = switch_instance;
@@ -206,19 +206,19 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
-	let { route } = $$props,
+	let { layout } = $$props,
 		{ content } = $$props,
 		{ allContent } = $$props,
-		{ allComponents } = $$props;
+		{ allLayouts } = $$props;
 
 	$$self.$$set = $$props => {
-		if ("route" in $$props) $$invalidate(0, route = $$props.route);
+		if ("layout" in $$props) $$invalidate(0, layout = $$props.layout);
 		if ("content" in $$props) $$invalidate(1, content = $$props.content);
 		if ("allContent" in $$props) $$invalidate(2, allContent = $$props.allContent);
-		if ("allComponents" in $$props) $$invalidate(3, allComponents = $$props.allComponents);
+		if ("allLayouts" in $$props) $$invalidate(3, allLayouts = $$props.allLayouts);
 	};
 
-	return [route, content, allContent, allComponents];
+	return [layout, content, allContent, allLayouts];
 }
 
 class Component extends SvelteComponent {
@@ -226,10 +226,10 @@ class Component extends SvelteComponent {
 		super();
 
 		init(this, options, instance, create_fragment, safe_not_equal, {
-			route: 0,
+			layout: 0,
 			content: 1,
 			allContent: 2,
-			allComponents: 3
+			allLayouts: 3
 		});
 	}
 }

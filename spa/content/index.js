@@ -129,29 +129,19 @@ function instance($$self, $$props, $$invalidate) {
 	let currentPage;
 	let postRangeHigh;
 	let postRangeLow;
-
-	let { siteName } = $$props,
-		{ title } = $$props,
-		{ intro } = $$props,
-		{ components } = $$props,
-		{ content } = $$props,
-		{ allContent } = $$props;
-
+	let { siteName } = $$props, { content } = $$props, { allContent } = $$props;
 	let allPosts = allContent.filter(content => content.type == "posts");
 	let totalPosts = allPosts.length;
 	let totalPages = Math.ceil(totalPosts / postsPerPage);
 
 	$$self.$$set = $$props => {
 		if ("siteName" in $$props) $$invalidate(0, siteName = $$props.siteName);
-		if ("title" in $$props) $$invalidate(6, title = $$props.title);
-		if ("intro" in $$props) $$invalidate(7, intro = $$props.intro);
-		if ("components" in $$props) $$invalidate(8, components = $$props.components);
-		if ("content" in $$props) $$invalidate(9, content = $$props.content);
-		if ("allContent" in $$props) $$invalidate(10, allContent = $$props.allContent);
+		if ("content" in $$props) $$invalidate(6, content = $$props.content);
+		if ("allContent" in $$props) $$invalidate(7, allContent = $$props.allContent);
 	};
 
 	$$self.$$.update = () => {
-		if ($$self.$$.dirty & /*content*/ 512) {
+		if ($$self.$$.dirty & /*content*/ 64) {
 			$: $$invalidate(1, currentPage = content.pager);
 		}
 
@@ -171,9 +161,6 @@ function instance($$self, $$props, $$invalidate) {
 		postRangeLow,
 		allPosts,
 		totalPages,
-		title,
-		intro,
-		components,
 		content,
 		allContent
 	];
@@ -182,15 +169,7 @@ function instance($$self, $$props, $$invalidate) {
 class Component extends SvelteComponent {
 	constructor(options) {
 		super();
-
-		init(this, options, instance, create_fragment, safe_not_equal, {
-			siteName: 0,
-			title: 6,
-			intro: 7,
-			components: 8,
-			content: 9,
-			allContent: 10
-		});
+		init(this, options, instance, create_fragment, safe_not_equal, { siteName: 0, content: 6, allContent: 7 });
 	}
 }
 

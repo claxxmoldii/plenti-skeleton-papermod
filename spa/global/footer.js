@@ -54,7 +54,7 @@ function create_fragment(ctx) {
 			span2 = element("span");
 			t5 = text("Powered by\n    ");
 			a1 = element("a");
-			t6 = text("Hugo");
+			t6 = text("Plenti");
 			t7 = space();
 			span3 = element("span");
 			t8 = text("·");
@@ -71,7 +71,14 @@ function create_fragment(ctx) {
 			span0 = claim_element(footer_nodes, "SPAN", {});
 			var span0_nodes = children(span0);
 			t0 = claim_text(span0_nodes, "© 2021\n    ");
-			a0 = claim_element(span0_nodes, "A", { class: true, href: true });
+
+			a0 = claim_element(span0_nodes, "A", {
+				class: true,
+				rel: true,
+				target: true,
+				href: true
+			});
+
 			var a0_nodes = children(a0);
 			t1 = claim_text(a0_nodes, "PaperMod");
 			a0_nodes.forEach(detach);
@@ -94,7 +101,7 @@ function create_fragment(ctx) {
 			});
 
 			var a1_nodes = children(a1);
-			t6 = claim_text(a1_nodes, "Hugo");
+			t6 = claim_text(a1_nodes, "Plenti");
 			a1_nodes.forEach(detach);
 			span2_nodes.forEach(detach);
 			t7 = claim_space(footer_nodes);
@@ -123,14 +130,16 @@ function create_fragment(ctx) {
 		},
 		h() {
 			attr(a0, "class", " svelte-5k3e2e");
-			attr(a0, "href", "/");
+			attr(a0, "rel", "noopener noreferrer");
+			attr(a0, "target", "_blank");
+			attr(a0, "href", "https://adityatelange.github.io/hugo-PaperMod/");
 			attr(a1, "class", " svelte-5k3e2e");
-			attr(a1, "href", "/");
-			attr(a1, "rel", "");
+			attr(a1, "href", "https://plenti.co/");
+			attr(a1, "rel", "noopener noreferrer");
 			attr(a1, "target", "_blank");
 			attr(a2, "class", " svelte-5k3e2e");
-			attr(a2, "href", "/");
-			attr(a2, "rel", "noopener");
+			attr(a2, "href", "https://git.io/hugopapermod");
+			attr(a2, "rel", "noopener noreferrer");
 			attr(a2, "target", "_blank");
 			attr(footer, "class", " svelte-5k3e2e");
 		},
