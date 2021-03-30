@@ -3,7 +3,7 @@
   import PostCardCollection from '../components/postCardCollection.svelte';
   import Pager from '../components/pager.svelte';
 
-  export let siteName, title, intro, components, content, allContent;
+  export let siteName, content, allContent;
 
   $: currentPage = content.pager;
   let postsPerPage = 5;

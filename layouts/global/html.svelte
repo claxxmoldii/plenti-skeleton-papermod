@@ -3,7 +3,7 @@
   import Navigation from './navigation.svelte';
   import Footer from './footer.svelte';
 
-  export let route, content, allContent, allComponents;
+  export let layout, content, allContent, allLayouts;
 </script>
 
 <html lang="en">
@@ -14,7 +14,7 @@
     </nav>
 
     <main class="isFlexCentered">
-      <svelte:component this={route} {...content.fields} {content} {allContent} {allComponents} />
+      <svelte:component this={layout} {...content.fields} {content} {allContent} {allLayouts} />
     </main>
 
     <footer class="isFlexCentered">
